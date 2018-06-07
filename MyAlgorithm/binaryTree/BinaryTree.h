@@ -12,5 +12,8 @@ public:
 	static TreeNode* getTree();
 	//求二叉树后序遍历
 	vector<int> inorderTraversal(TreeNode*root);
+	//求二叉树后序遍历
+	vector<int> postorderTraversal(TreeNode* root);
+
 };
 

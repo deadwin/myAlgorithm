@@ -7,9 +7,25 @@ int main() {
 
 	vector<int>vec = {};
 	vec = bin->preorderTraversal(tree);
+	cout << "===========前序遍历==============" << endl;
 	for (vector<int>::iterator it=vec.begin();it!=vec.end();++it)
 	{
 		cout << *it << "\t";
 	}
+
+	vec = bin->inorderTraversal(tree);
+	cout <<endl<< "===========中序遍历==============" << endl;
+	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+	{
+		cout << *it << "\t";
+	}
+
+	vec = bin->postorderTraversal(tree);
+	cout <<endl<< "===========后序遍历==============" << endl;
+	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+	{
+		cout << *it << "\t";
+	}
+
 	return 0;
 }

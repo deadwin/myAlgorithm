@@ -55,6 +55,44 @@ vector<int> BinaryTree::inorderTraversal(TreeNode * root)
 	vector<int>result = {};
 	if (root == NULL)return result;
 	stack<TreeNode*>S;
+	TreeNode*p = root;
+	while (p != NULL||!S.empty())
+	{
+		if (p != NULL) {
+			S.push(p);
+			p = p->left;
+		}
+		else {
+			p = S.top();
+			S.pop();
+			result.push_back(p->val);
+			p = p->right;
+		}
+	}
+	
+	return result;
+}
+
+vector<int> BinaryTree::postorderTraversal(TreeNode * root)
+{
+	vector<int>result = {};
+	if (root == NULL)return result;
+	stack<TreeNode*>S;
+	S.push(root);
+	TreeNode* p;
+	TreeNode* flag = NULL;
+	while (!S.empty()) {
+		p = S.top();
+		if ((p->left == NULL && p->right == NULL) || (flag != NULL && (flag == p->left || flag == p->right))) {
+			result.push_back(p->val);
+			S.pop();
+			flag = p;
+		}
+		else {
+			if (p->right)S.push(p->right);
+			if (p->left)S.push(p->left);
+		}
+	}
 	
 	return result;
 }
