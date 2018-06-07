@@ -17,15 +17,15 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="BinaryTree.cpp">
-      <Filter>binaryTree</Filter>
-    </ClCompile>
     <ClCompile Include="globalData\globalData.h">
       <Filter>global</Filter>
     </ClCompile>
+    <ClCompile Include="binaryTree\BinaryTree.cpp">
+      <Filter>binaryTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryTree.h">
+    <ClInclude Include="binaryTree\BinaryTree.h">
       <Filter>binaryTree</Filter>
     </ClInclude>
   </ItemGroup>
