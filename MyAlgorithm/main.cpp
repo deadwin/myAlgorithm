@@ -1,4 +1,4 @@
-#include "BinaryTree.h"
+#include "binaryTree/BinaryTree.h"
 
 int main() {
 	cout << "hello algorithm" << endl;
