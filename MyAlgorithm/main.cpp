@@ -2,6 +2,7 @@
 
 int main() {
 	cout << "hello algorithm" << endl;
+
 	BinaryTree*bin = new BinaryTree;
 	TreeNode*tree = BinaryTree::getTree();
 
@@ -30,6 +31,10 @@ int main() {
 	int depth = bin->getMaxDepthByRecursion(tree);
 	cout << endl << "==========递归求最大深度：==============" << endl;
 	cout << depth<< "\t";
+
+	bool bSymmetric = bin->isSymmetric(tree);
+	cout << endl << "==========递归判断对称二叉树：==============" << endl;
+	cout << bSymmetric << "\t";
 
  	return 0;
 }

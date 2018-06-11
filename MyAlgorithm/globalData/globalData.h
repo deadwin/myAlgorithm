@@ -1,6 +1,7 @@
 #include <vector>
 #include<stack>
 #include<iostream>
+#include <functional>
 using std::stack;
 using std::vector;
 using std::cout;
