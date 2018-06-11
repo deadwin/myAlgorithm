@@ -16,8 +16,10 @@ public:
 	vector<int> postorderTraversal(TreeNode* root);
 	//求二叉树的最大深度
 	int maxDepth(TreeNode* root);
-
 	//递归求二叉树最大深度
 	int getMaxDepthByRecursion(TreeNode* root);
+	//对称二叉树
+	bool isSymmetric(TreeNode* root);
+
 };
 

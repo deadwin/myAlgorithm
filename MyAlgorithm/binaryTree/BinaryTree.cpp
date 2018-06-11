@@ -125,3 +125,9 @@ int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
 	return lDepth > rDepth ? lDepth : rDepth;
 }
 
+bool BinaryTree::isSymmetric(TreeNode * root)
+{
+
+	return false;
+}
+
