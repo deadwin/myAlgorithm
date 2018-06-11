@@ -1,31 +1,37 @@
 #include "binaryTree/BinaryTree.h"
 
-int main() {
-	cout << "hello algorithm" << endl;
+void BinaryTreeTest() {
 	BinaryTree*bin = new BinaryTree;
-	TreeNode*tree = BinaryTree::getTree();
+	TreeNode* tree = BinaryTree::getTree();
 
 	vector<int>vec = {};
 	vec = bin->preorderTraversal(tree);
 	cout << "===========前序遍历==============" << endl;
-	for (vector<int>::iterator it=vec.begin();it!=vec.end();++it)
+	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 	{
 		cout << *it << "\t";
 	}
 
 	vec = bin->inorderTraversal(tree);
-	cout <<endl<< "===========中序遍历==============" << endl;
+	cout << endl << "===========中序遍历==============" << endl;
 	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 	{
 		cout << *it << "\t";
 	}
 
 	vec = bin->postorderTraversal(tree);
-	cout <<endl<< "===========后序遍历==============" << endl;
+	cout << endl << "===========后序遍历==============" << endl;
 	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 	{
 		cout << *it << "\t";
 	}
+}
+
+
+
+int main() {
+	cout << "hello algorithm" << endl;
+	BinaryTreeTest();
 
 	return 0;
 }

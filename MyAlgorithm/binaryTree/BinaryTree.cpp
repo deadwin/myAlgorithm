@@ -1,5 +1,16 @@
 #include "BinaryTree.h"
 
+/*
+getTree():
+				99
+			   /  \
+			  5    6
+			/  \  / \
+		   7    8 9  10
+*/
+
+
+
 BinaryTree::BinaryTree()
 {
 }
@@ -29,14 +40,7 @@ vector<int> BinaryTree::preorderTraversal(TreeNode * root)
 	}
 	return vec;
 }
-/*
-getTree:
-				99
-			   /  \
-			  5    6
-			/  \  / \
-		   7    8 9  10
-*/
+
 
 TreeNode * BinaryTree::getTree()
 {
