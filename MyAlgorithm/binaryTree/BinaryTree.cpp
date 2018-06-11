@@ -102,21 +102,6 @@ vector<int> BinaryTree::postorderTraversal(TreeNode * root)
 	return result;
 }
 
-int BinaryTree::maxDepth(TreeNode * root)
-{
-	int depth = 0;
-	if (root == NULL)return depth;
-	stack<TreeNode*>S;
-	S.push(root);
-	TreeNode* p = root;
-	while (!S.empty())
-	{
-		p = S.top();
-
-	}
-	return depth;
-}
-
 int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
 {
 	if (root == NULL)return 0;
@@ -127,7 +112,8 @@ int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
 
 bool BinaryTree::isSymmetric(TreeNode * root)
 {
-
+	if (root == NULL)return true;
+	
 	return false;
 }
 
