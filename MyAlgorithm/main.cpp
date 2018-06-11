@@ -27,5 +27,9 @@ int main() {
 		cout << *it << "\t";
 	}
 
+	int depth = bin->getMaxDepthByRecursion(tree);
+	cout << endl << "==========递归求最大深度：==============" << endl;
+	cout << depth<< "\t";
+
 	return 0;
 }

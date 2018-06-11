@@ -36,6 +36,8 @@ getTree:
 			  5    6
 			/  \  / \
 		   7    8 9  10
+		  / \
+		11   12
 */
 
 TreeNode * BinaryTree::getTree()
@@ -47,6 +49,9 @@ TreeNode * BinaryTree::getTree()
 	tree->left->right = new TreeNode(8);
 	tree->right->left = new TreeNode(9);
 	tree->right->right = new TreeNode(10);
+
+	tree->left->left->left = new TreeNode(11);
+	tree->left->left->right = new TreeNode(12);
 	return tree;
 }
 
@@ -96,3 +101,27 @@ vector<int> BinaryTree::postorderTraversal(TreeNode * root)
 	
 	return result;
 }
+
+int BinaryTree::maxDepth(TreeNode * root)
+{
+	int depth = 0;
+	if (root == NULL)return depth;
+	stack<TreeNode*>S;
+	S.push(root);
+	TreeNode* p = root;
+	while (!S.empty())
+	{
+		p = S.top();
+
+	}
+	return depth;
+}
+
+int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
+{
+	if (root == NULL)return 0;
+	int lDepth = getMaxDepthByRecursion(root->left) + 1;
+	int rDepth = getMaxDepthByRecursion(root->right) + 1;
+	return lDepth > rDepth ? lDepth : rDepth;
+}
+
