@@ -40,5 +40,9 @@ int main() {
 	bool hasPathSum = bin->hasPathSum(tree,999);
 	cout << endl << "==========112.Â·¾¶×ÜºÍ£º==============" << endl;
 	cout << hasPathSum << "\t";
+
+	vector<int>a, b;
+	TreeNode* result = bin->buildTree(a, b);
+
  	return 0;
 }

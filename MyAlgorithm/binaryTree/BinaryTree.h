@@ -20,10 +20,12 @@ public:
 	bool isSymmetric(TreeNode* root);
 	//112.路径总和
 	bool hasPathSum(TreeNode* root, int sum);
+	//106. 从中序与后序遍历序列构造二叉树
+	TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder);
 private:
 	//判断对称二叉树
 	bool isSymmetric(TreeNode* left, TreeNode*right);
 	//路径总和
 	bool bPathSum(TreeNode* root, int sum);
+	
 };
-
