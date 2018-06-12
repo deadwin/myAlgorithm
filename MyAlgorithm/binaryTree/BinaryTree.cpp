@@ -44,7 +44,7 @@ TreeNode * BinaryTree::getTree()
 {
 	TreeNode* tree = new TreeNode(99);
 	tree->left = new TreeNode(5);
-	tree->right = new TreeNode(6);
+	tree->right = new TreeNode(5);
 	tree->left->left = new TreeNode(7);
 	tree->left->right = new TreeNode(8);
 	tree->right->left = new TreeNode(9);
@@ -113,14 +113,13 @@ int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
 bool BinaryTree::isSymmetric(TreeNode * root)
 {
 	if (root == NULL)return true;
-	
 	return isSymmetric(root->left, root->right);
 }
 
 bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
 {
-	if (!left && !right) return true;
-	if (left && !right || !left&&right || left->val != right->val)return false;
+	if (left == NULL && right == NULL)return true;
+	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
 	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
 }
 
