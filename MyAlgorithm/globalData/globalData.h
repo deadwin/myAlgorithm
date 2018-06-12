@@ -7,6 +7,7 @@ using std::vector;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
 #ifndef NULL
 #define NULL 0
 #endif

@@ -124,8 +124,34 @@ bool BinaryTree::hasPathSum(TreeNode * root, int sum)
 
 TreeNode * BinaryTree::buildTree(vector<int>& inorder, vector<int>& postorder)
 {
-	TreeNode* tree = new TreeNode(postorder[postorder.size()-1]);
-	if (inorder.size() == 0 || postorder.size() == 0)return tree;
+	if (inorder.size() == 0 || postorder.size() == 0)return NULL;
+	if (postorder.size() != inorder.size()) return NULL;
+
+	vector<int>inorder_l, inorder_r, postorder_l, postorder_r;
+	int root_index = -1;
+	int len = postorder.size();
+
+	TreeNode* tree = new TreeNode(postorder[len - 1]);
+
+	for (int i = 0; i < len; i++) {
+		if (postorder[len - 1] == inorder[i]) {
+			root_index = i;
+			break;
+		}
+	}
+
+	for (int i = 0; i < root_index; ++i) {
+		postorder_l.push_back(postorder[i]);
+		inorder_l.push_back(inorder[i]);
+	}
+	for (int i = root_index + 1; i < inorder.size(); ++i) {
+		postorder_r.push_back(postorder[i - 1]);
+		inorder_r.push_back(inorder[i]);
+	}
+
+	tree->left = buildTree(inorder_l, postorder_l);
+	tree->right = buildTree(inorder_r, postorder_r);
+
 
 	return tree;
 }
