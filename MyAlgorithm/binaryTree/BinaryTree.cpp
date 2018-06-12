@@ -44,7 +44,7 @@ TreeNode * BinaryTree::getTree()
 {
 	TreeNode* tree = new TreeNode(99);
 	tree->left = new TreeNode(5);
-	tree->right = new TreeNode(5);
+	tree->right = new TreeNode(6);
 	tree->left->left = new TreeNode(7);
 	tree->left->right = new TreeNode(8);
 	tree->right->left = new TreeNode(9);
