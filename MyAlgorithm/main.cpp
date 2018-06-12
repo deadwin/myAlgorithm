@@ -1,37 +1,40 @@
 #include "binaryTree/BinaryTree.h"
 
-void BinaryTreeTest() {
+int main() {
+	cout << "hello algorithm" << endl;
+
 	BinaryTree*bin = new BinaryTree;
-	TreeNode* tree = BinaryTree::getTree();
+	TreeNode*tree = BinaryTree::getTree();
 
 	vector<int>vec = {};
 	vec = bin->preorderTraversal(tree);
 	cout << "===========前序遍历==============" << endl;
-	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+	for (vector<int>::iterator it=vec.begin();it!=vec.end();++it)
 	{
 		cout << *it << "\t";
 	}
 
 	vec = bin->inorderTraversal(tree);
-	cout << endl << "===========中序遍历==============" << endl;
+	cout <<endl<< "===========中序遍历==============" << endl;
 	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 	{
 		cout << *it << "\t";
 	}
 
 	vec = bin->postorderTraversal(tree);
-	cout << endl << "===========后序遍历==============" << endl;
+	cout <<endl<< "===========后序遍历==============" << endl;
 	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 	{
 		cout << *it << "\t";
 	}
-}
 
+	int depth = bin->getMaxDepthByRecursion(tree);
+	cout << endl << "==========递归求最大深度：==============" << endl;
+	cout << depth<< "\t";
 
+	bool bSymmetric = bin->isSymmetric(tree);
+	cout << endl << "==========递归判断对称二叉树：==============" << endl;
+	cout << bSymmetric << "\t";
 
-int main() {
-	cout << "hello algorithm" << endl;
-	BinaryTreeTest();
-
-	return 0;
+ 	return 0;
 }

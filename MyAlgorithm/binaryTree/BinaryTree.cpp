@@ -1,16 +1,5 @@
 #include "BinaryTree.h"
 
-/*
-getTree():
-				99
-			   /  \
-			  5    6
-			/  \  / \
-		   7    8 9  10
-*/
-
-
-
 BinaryTree::BinaryTree()
 {
 }
@@ -40,7 +29,16 @@ vector<int> BinaryTree::preorderTraversal(TreeNode * root)
 	}
 	return vec;
 }
-
+/*
+getTree:
+				99
+			   /  \
+			  5    6
+			/  \  / \
+		   7    8 9  10
+		  / \
+		11   12
+*/
 
 TreeNode * BinaryTree::getTree()
 {
@@ -51,6 +49,9 @@ TreeNode * BinaryTree::getTree()
 	tree->left->right = new TreeNode(8);
 	tree->right->left = new TreeNode(9);
 	tree->right->right = new TreeNode(10);
+
+	tree->left->left->left = new TreeNode(11);
+	tree->left->left->right = new TreeNode(12);
 	return tree;
 }
 
@@ -100,3 +101,26 @@ vector<int> BinaryTree::postorderTraversal(TreeNode * root)
 	
 	return result;
 }
+
+int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
+{
+	if (root == NULL)return 0;
+	int lDepth = getMaxDepthByRecursion(root->left) + 1;
+	int rDepth = getMaxDepthByRecursion(root->right) + 1;
+	return lDepth > rDepth ? lDepth : rDepth;
+}
+
+bool BinaryTree::isSymmetric(TreeNode * root)
+{
+	if (root == NULL)return true;
+	
+	return isSymmetric(root->left, root->right);
+}
+
+bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
+{
+	if (!left && !right) return true;
+	if (left && !right || !left&&right || left->val != right->val)return false;
+	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
+}
+
