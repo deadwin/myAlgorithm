@@ -27,5 +27,6 @@ private:
 	bool isSymmetric(TreeNode* left, TreeNode*right);
 	//路径总和
 	bool bPathSum(TreeNode* root, int sum);
-	
+	//从中序与后序遍历序列构造二叉树
+
 };

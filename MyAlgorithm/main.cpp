@@ -41,7 +41,7 @@ int main() {
 	cout << endl << "==========112.Â·¾¶×ÜºÍ£º==============" << endl;
 	cout << hasPathSum << "\t";
 
-	vector<int>a, b;
+	vector<int>a = { 9,3,15,20,7 }, b = { 9,15,7,20,3 };
 	TreeNode* result = bin->buildTree(a, b);
 
  	return 0;
