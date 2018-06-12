@@ -23,5 +23,7 @@ public:
 private:
 	//判断对称二叉树
 	bool isSymmetric(TreeNode* left, TreeNode*right);
+	//路径总和
+	bool bPathSum(TreeNode* root, int sum);
 };
 

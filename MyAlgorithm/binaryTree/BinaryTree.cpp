@@ -119,11 +119,13 @@ bool BinaryTree::isSymmetric(TreeNode * root)
 bool BinaryTree::hasPathSum(TreeNode * root, int sum)
 {
 	if (root == NULL)return false;
-	//else if (sum - root->val == 0)return true;
-	else if (!root->left && !root->right)return sum - root->val == 0;
-	else return (root->left&&hasPathSum(root->left, sum - root->val)) || (root->right && hasPathSum(root->right, sum - root->val));
-	//else if (root->left&&!root->right) return hasPathSum(root->left, sum - root->val);
-	//else if (!root->left&&root->right) return hasPathSum(root->right, sum - root->val);
+	else return bPathSum(root, sum);
+}
+
+bool BinaryTree::bPathSum(TreeNode * root, int sum)
+{
+	if (!root->left && !root->right)return sum == root->val;
+	return (root->left&&bPathSum(root->left, sum - root->val)) || (root->right && bPathSum(root->right, sum - root->val));
 }
 
 bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
