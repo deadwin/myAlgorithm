@@ -36,5 +36,9 @@ int main() {
 	cout << endl << "==========µÝ¹éÅÐ¶Ï¶Ô³Æ¶þ²æÊ÷£º==============" << endl;
 	cout << bSymmetric << "\t";
 
+
+	bool hasPathSum = bin->hasPathSum(tree,999);
+	cout << endl << "==========112.Â·¾¶×ÜºÍ£º==============" << endl;
+	cout << hasPathSum << "\t";
  	return 0;
 }
