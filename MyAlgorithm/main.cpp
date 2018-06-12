@@ -36,5 +36,13 @@ int main() {
 	cout << endl << "==========µİ¹éÅĞ¶Ï¶Ô³Æ¶ş²æÊ÷£º==============" << endl;
 	cout << bSymmetric << "\t";
 
+
+	bool hasPathSum = bin->hasPathSum(tree,999);
+	cout << endl << "==========112.Â·¾¶×ÜºÍ£º==============" << endl;
+	cout << hasPathSum << "\t";
+
+	vector<int>a = { 9,3,15,20,7 }, b = { 9,15,7,20,3 };
+	TreeNode* result = bin->buildTree(a, b);
+
  	return 0;
 }

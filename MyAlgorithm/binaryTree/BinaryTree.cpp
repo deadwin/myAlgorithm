@@ -113,14 +113,33 @@ int BinaryTree::getMaxDepthByRecursion(TreeNode * root)
 bool BinaryTree::isSymmetric(TreeNode * root)
 {
 	if (root == NULL)return true;
-	
 	return isSymmetric(root->left, root->right);
+}
+
+bool BinaryTree::hasPathSum(TreeNode * root, int sum)
+{
+	if (root == NULL)return false;
+	else return bPathSum(root, sum);
+}
+
+TreeNode * BinaryTree::buildTree(vector<int>& inorder, vector<int>& postorder)
+{
+	TreeNode* tree = new TreeNode(postorder[postorder.size()-1]);
+	if (inorder.size() == 0 || postorder.size() == 0)return tree;
+
+	return tree;
+}
+
+bool BinaryTree::bPathSum(TreeNode * root, int sum)
+{
+	if (!root->left && !root->right)return sum == root->val;
+	return (root->left&&bPathSum(root->left, sum - root->val)) || (root->right && bPathSum(root->right, sum - root->val));
 }
 
 bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
 {
-	if (!left && !right) return true;
-	if (left && !right || !left&&right || left->val != right->val)return false;
+	if (left == NULL && right == NULL)return true;
+	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
 	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
 }
 

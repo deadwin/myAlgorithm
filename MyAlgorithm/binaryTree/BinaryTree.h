@@ -14,12 +14,19 @@ public:
 	vector<int> inorderTraversal(TreeNode*root);
 	//求二叉树后序遍历
 	vector<int> postorderTraversal(TreeNode* root);
-	//递归求二叉树最大深度
+	//104.二叉树的最大深度:递归
 	int getMaxDepthByRecursion(TreeNode* root);
-	//判断对称二叉树
+	//101.判断对称二叉树
 	bool isSymmetric(TreeNode* root);
+	//112.路径总和
+	bool hasPathSum(TreeNode* root, int sum);
+	//106. 从中序与后序遍历序列构造二叉树
+	TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder);
 private:
 	//判断对称二叉树
 	bool isSymmetric(TreeNode* left, TreeNode*right);
-};
+	//路径总和
+	bool bPathSum(TreeNode* root, int sum);
+	//从中序与后序遍历序列构造二叉树
 
+};
