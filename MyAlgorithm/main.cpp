@@ -1,5 +1,6 @@
 #include "binaryTree/BinaryTree.h"
 #include "278/firstBadVersion.h"
+#include "836/RectangleOverlap.hpp"
 void binaryTreeTest() {
 	BinaryTree*bin = new BinaryTree;
 	TreeNode*tree = BinaryTree::getTree();

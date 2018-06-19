@@ -18,6 +18,9 @@
     <Filter Include="code\278">
       <UniqueIdentifier>{0aa5461a-887f-4947-abf1-146189f593b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\836">
+      <UniqueIdentifier>{8017d368-cc78-48a5-9fd1-d40345ff98db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -40,5 +43,14 @@
     <ClInclude Include="code\278\firstBadVersion.h">
       <Filter>code\278</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="code\836\RectangleOverlap.hpp">
+      <Filter>code\836</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyAlgorithm.rc">
+      <Filter>code\binaryTree</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
