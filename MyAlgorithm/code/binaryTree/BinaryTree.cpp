@@ -116,44 +116,17 @@ bool BinaryTree::isSymmetric(TreeNode * root)
 	return isSymmetric(root->left, root->right);
 }
 
+bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
+{
+	if (left == NULL && right == NULL)return true;
+	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
+	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
+}
+
 bool BinaryTree::hasPathSum(TreeNode * root, int sum)
 {
 	if (root == NULL)return false;
 	else return bPathSum(root, sum);
-}
-
-TreeNode * BinaryTree::buildTree(vector<int>& inorder, vector<int>& postorder)
-{
-	if (inorder.size() == 0 || postorder.size() == 0)return NULL;
-	if (postorder.size() != inorder.size()) return NULL;
-
-	vector<int>inorder_l, inorder_r, postorder_l, postorder_r;
-	int root_index = -1;
-	int len = postorder.size();
-
-	TreeNode* tree = new TreeNode(postorder[len - 1]);
-
-	for (int i = 0; i < len; i++) {
-		if (postorder[len - 1] == inorder[i]) {
-			root_index = i;
-			break;
-		}
-	}
-
-	for (int i = 0; i < root_index; ++i) {
-		postorder_l.push_back(postorder[i]);
-		inorder_l.push_back(inorder[i]);
-	}
-	for (int i = root_index + 1; i < inorder.size(); ++i) {
-		postorder_r.push_back(postorder[i - 1]);
-		inorder_r.push_back(inorder[i]);
-	}
-
-	tree->left = buildTree(inorder_l, postorder_l);
-	tree->right = buildTree(inorder_r, postorder_r);
-
-
-	return tree;
 }
 
 bool BinaryTree::bPathSum(TreeNode * root, int sum)
@@ -162,10 +135,13 @@ bool BinaryTree::bPathSum(TreeNode * root, int sum)
 	return (root->left&&bPathSum(root->left, sum - root->val)) || (root->right && bPathSum(root->right, sum - root->val));
 }
 
-bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
+TreeNode * BinaryTree::buildTree(vector<int>& inorder, vector<int>& postorder)
 {
-	if (left == NULL && right == NULL)return true;
-	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
-	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
+	if (inorder.size() == 0 || postorder.size() == 0 || inorder.size() != postorder.size()) return NULL;
+
+	TreeNode* tree=new TreeNode(postorder[postorder.size()-1]);
+	return tree;
 }
+
+
 

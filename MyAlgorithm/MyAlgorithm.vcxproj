@@ -19,19 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="binaryTree\BinaryTree.cpp" />
-    <ClCompile Include="globalData\globalData.h" />
+    <ClCompile Include="code\278\firstBadVersion.cpp" />
+    <ClCompile Include="code\binaryTree\BinaryTree.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binaryTree\BinaryTree.h" />
+    <ClInclude Include="code\278\firstBadVersion.h" />
+    <ClInclude Include="code\binaryTree\BinaryTree.h" />
+    <ClInclude Include="code\globalData\globalData.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E17C6796-A550-4564-BFFC-12C50A685054}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MyAlgorithm</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -109,7 +111,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\MyCppTest\myAlgorithm\MyAlgorithm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\MyCppTest\myAlgorithm\MyAlgorithm\code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

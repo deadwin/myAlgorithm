@@ -5,28 +5,40 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="binaryTree">
+    <Filter Include="code">
+      <UniqueIdentifier>{e5560731-9dfc-4572-8acf-9d9dff422038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\binaryTree">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="global">
+    <Filter Include="code\global">
       <UniqueIdentifier>{4d49e710-360d-4ded-a730-21abd4534f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\278">
+      <UniqueIdentifier>{0aa5461a-887f-4947-abf1-146189f593b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="globalData\globalData.h">
-      <Filter>global</Filter>
+    <ClCompile Include="code\binaryTree\BinaryTree.cpp">
+      <Filter>code\binaryTree</Filter>
     </ClCompile>
-    <ClCompile Include="binaryTree\BinaryTree.cpp">
-      <Filter>binaryTree</Filter>
+    <ClCompile Include="code\278\firstBadVersion.cpp">
+      <Filter>code\278</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binaryTree\BinaryTree.h">
-      <Filter>binaryTree</Filter>
+    <ClInclude Include="code\binaryTree\BinaryTree.h">
+      <Filter>code\binaryTree</Filter>
+    </ClInclude>
+    <ClInclude Include="code\globalData\globalData.h">
+      <Filter>code\global</Filter>
+    </ClInclude>
+    <ClInclude Include="code\278\firstBadVersion.h">
+      <Filter>code\278</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
