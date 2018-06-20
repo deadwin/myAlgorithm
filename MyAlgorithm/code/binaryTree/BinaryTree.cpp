@@ -118,8 +118,8 @@ bool BinaryTree::isSymmetric(TreeNode * root)
 
 bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
 {
-	if (left == NULL && right == NULL)return true;
-	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
+	if (left == NULL&&right == NULL)return true;
+	if ((left == NULL&&right != NULL) || (left != NULL&&right == NULL) || (left->val != right->val))return false;
 	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
 }
 

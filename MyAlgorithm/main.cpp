@@ -50,12 +50,67 @@ void test278() {
 	cout << res << endl;
 
 }
+enum {
+	MEIHUA =0x00,
+	HONGTAO=0x10,
+	FANGKUAI=0x20,
+	HEITAO=0x30,
+	JOKER=0x40,
+	LAIZI =0x50
+};
+
+
+
+map<int, vector<int>> ttt(const vector<int>&vecCardValue) {
+	map<int, vector<int>>mCard;
+	for (auto card:vecCardValue) {
+		switch (card&0xf0)
+		{
+		case MEIHUA:
+			cout << "meihua" << endl;
+			mCard[MEIHUA].push_back(card);
+			break;
+		case HONGTAO:
+			mCard[HONGTAO].push_back(card);
+			break;
+		case HEITAO:
+			mCard[HEITAO].push_back(card);
+			break;
+		case FANGKUAI:
+			mCard[FANGKUAI].push_back(card);
+			break;
+		case JOKER:
+			mCard[JOKER].push_back(card);
+			break;
+		case LAIZI:
+			mCard[LAIZI].push_back(card);
+			break;
+		default:
+			break;
+		}
+	}
+	for (int i = 0; i < mCard.size(); ++i) {
+		map<int, vector<int>> tmpVec;
+		sort(mCard[i].begin(),mCard[i].end());
+		for (auto card : mCard[i]) {
+			tmpVec[card & 0x0f].push_back(card&0x0f);
+		}
+		int a = 0;
+	}
+
+	return mCard;
+}
+
+
 
 
 int main() {
 	cout << "hello algorithm" << endl;
 	binaryTreeTest();
 	test278();
+
+	vector<int>vecCard = { 0x05,0x06,0x14,0x20,0x35,0x42 };
+	ttt(vecCard);
 
 	return 0;
 }
