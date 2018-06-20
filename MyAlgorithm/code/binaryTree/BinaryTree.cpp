@@ -118,8 +118,8 @@ bool BinaryTree::isSymmetric(TreeNode * root)
 
 bool BinaryTree::isSymmetric(TreeNode * left, TreeNode * right)
 {
-	if (left == NULL && right == NULL)return true;
-	if (left == NULL&&right != NULL || left != NULL&&right == NULL || left->val != right->val) return false;
+	if (left == NULL&&right == NULL)return true;
+	if ((left == NULL&&right != NULL) || (left != NULL&&right == NULL) || (left->val != right->val))return false;
 	return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
 }
 
@@ -135,11 +135,18 @@ bool BinaryTree::bPathSum(TreeNode * root, int sum)
 	return (root->left&&bPathSum(root->left, sum - root->val)) || (root->right && bPathSum(root->right, sum - root->val));
 }
 
+TreeNode * BinaryTree::subBulid(vector<int>& inorder, vector<int>& postorder, int index)
+{
+	return nullptr;
+}
+
 TreeNode * BinaryTree::buildTree(vector<int>& inorder, vector<int>& postorder)
 {
 	if (inorder.size() == 0 || postorder.size() == 0 || inorder.size() != postorder.size()) return NULL;
 
 	TreeNode* tree=new TreeNode(postorder[postorder.size()-1]);
+	int index = postorder.size() - 1;
+
 	return tree;
 }
 
