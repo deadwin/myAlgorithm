@@ -21,6 +21,9 @@
     <Filter Include="code\836">
       <UniqueIdentifier>{8017d368-cc78-48a5-9fd1-d40345ff98db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\garbage">
+      <UniqueIdentifier>{8be2d865-c630-493b-b02f-dcc058123610}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="code\836\RectangleOverlap.hpp">
       <Filter>code\836</Filter>
+    </ClInclude>
+    <ClInclude Include="code\garbage\garbage.hpp">
+      <Filter>code\garbage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
