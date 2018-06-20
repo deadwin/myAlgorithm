@@ -48,6 +48,7 @@ void test278() {
 	firstBadVersion sol = firstBadVersion();
 	int res = sol.isFirstBadVersion(2126753390);
 	cout << res << endl;
+
 }
 
 

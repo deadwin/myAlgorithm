@@ -36,5 +36,5 @@ private:
 	//路径总和
 	bool bPathSum(TreeNode* root, int sum);
 	//从中序与后序遍历序列构造二叉树
-
+	TreeNode*subBulid(vector<int>& inorder, vector<int>& postorder, int index);
 };

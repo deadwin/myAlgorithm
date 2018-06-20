@@ -28,10 +28,6 @@
     <ClInclude Include="code\836\RectangleOverlap.hpp" />
     <ClInclude Include="code\binaryTree\BinaryTree.h" />
     <ClInclude Include="code\globalData\globalData.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="MyAlgorithm.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
