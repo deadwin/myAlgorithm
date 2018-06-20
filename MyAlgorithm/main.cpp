@@ -89,13 +89,19 @@ map<int, vector<int>> ttt(const vector<int>&vecCardValue) {
 			break;
 		}
 	}
+
+
 	for (int i = 0; i < mCard.size(); ++i) {
 		map<int, vector<int>> tmpVec;
 		sort(mCard[i].begin(),mCard[i].end());
 		for (auto card : mCard[i]) {
 			tmpVec[card & 0x0f].push_back(card&0x0f);
 		}
-		int a = 0;
+		for (auto it = tmpVec.begin();it!=tmpVec.end();++it)
+		{
+			
+		}
+
 	}
 
 	return mCard;
