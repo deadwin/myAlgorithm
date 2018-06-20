@@ -43,14 +43,8 @@
     <ClInclude Include="code\278\firstBadVersion.h">
       <Filter>code\278</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="code\836\RectangleOverlap.hpp">
       <Filter>code\836</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="MyAlgorithm.rc">
-      <Filter>code\binaryTree</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>
