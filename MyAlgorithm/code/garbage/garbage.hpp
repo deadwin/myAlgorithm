@@ -108,3 +108,62 @@ void g_ths() {
 		}
 	}
 }
+
+
+
+
+//******************************
+//  描述： 直接插入排序
+//  详细： 
+//方法名： sort_test
+//  参数： vector<int>&
+//返回值： void
+//  时间： 2018/06/21
+//  作者： Ran Jin  
+//******************************
+void sort_test(vector<int>&vec) {
+	for (int i = 0; i != vec.size() - 1; ++i) {
+		int temp = i;
+		for (int j = i + 1; j != vec.size(); ++j) {
+			if (vec[j] < vec[temp]) {
+				temp = j;
+			}
+		}
+		if (temp != i) {
+			int tp = vec[temp];
+			vec[temp] = vec[i];
+			vec[i] = tp;
+		}
+	}
+}
+//******************************
+//  描述： 希尔排序(缩小增量排序)
+//  详细： 
+//方法名： shell_sort
+//  参数： vector<int>&
+//返回值： void
+//  时间： 2018/06/21
+//  作者： Ran Jin  
+//******************************
+void shell_sort(vector<int>&vec) {
+	for (int div = vec.size() / 2; div >= 1; div /= 2) {
+		cout << endl;
+		for (int i = 0; i <= div; ++i) {
+			for (int j = i; j < vec.size() - div; j += div) {
+				cout << j << "\t";
+				for (int k = j+div; k < vec.size(); k += div) {
+					if (vec[k] < vec[j]) {
+						vec[j] = vec[k] ^ vec[j];
+						vec[k] = vec[j] ^ vec[k];
+						vec[j] = vec[j] ^ vec[k];
+					}
+					else if (vec[k] == vec[j]) {
+						cout << "相同" << k <<","<< j << endl;
+					}
+				}
+			}
+		}
+	}
+
+
+}

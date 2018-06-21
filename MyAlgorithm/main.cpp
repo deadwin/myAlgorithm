@@ -1,6 +1,7 @@
 #include "binaryTree/BinaryTree.h"
 #include "278/firstBadVersion.h"
 #include "836/RectangleOverlap.hpp"
+#include "garbage/garbage.hpp"
 void binaryTreeTest() {
 	BinaryTree*bin = new BinaryTree;
 	TreeNode*tree = BinaryTree::getTree();
@@ -60,6 +61,7 @@ int main() {
 	binaryTreeTest();
 	test278();
 
-
+	vector<int>vec = { 6,7,8,5,4,3,1,0,11,12 };
+	shell_sort(vec);
 	return 0;
 }
