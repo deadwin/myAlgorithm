@@ -150,7 +150,6 @@ void shell_sort(vector<int>&vec) {
 		cout << endl;
 		for (int i = 0; i <= div; ++i) {
 			for (int j = i; j < vec.size() - div; j += div) {
-				cout << j << "\t";
 				for (int k = j+div; k < vec.size(); k += div) {
 					if (vec[k] < vec[j]) {
 						vec[j] = vec[k] ^ vec[j];
@@ -164,6 +163,47 @@ void shell_sort(vector<int>&vec) {
 			}
 		}
 	}
+}
 
-
+//******************************
+//  描述： 冒泡排序
+//  详细： 
+//方法名： bubble_sort
+//  参数： vector<int>&
+//返回值： void
+//  时间： 2018/06/22
+//    By： Ran Jin  
+//******************************
+void bubble_sort(vector<int>&vec) {
+	int n = 0;
+	vector<int>aaa = vec;
+	for (int i = 0; i < vec.size() - 2; ++i) {
+		for (int j = i + 1; j < vec.size() - 1; ++j) {
+			n = n++;
+			if (vec[i] > vec[j]) {
+				vec[i] = vec[i] ^ vec[j];
+				vec[j] = vec[i] ^ vec[j];
+				vec[i] = vec[i] ^ vec[j];
+			}
+		}
+	}
+	cout << n << endl;
+	int m = 0;
+	for (int i = 0; i < aaa.size() - 1; ++i) {
+		bool bSort = true;
+		for (int j = 0; j < aaa.size() - 1-i; ++j) {
+			m += 1;
+			if (aaa[j] < aaa[j+1]) {
+				bSort = false;
+				aaa[j] = aaa[j] ^ aaa[j + 1];
+				aaa[j + 1] = aaa[j] ^ aaa[j + 1];
+				aaa[j] = aaa[j] ^ aaa[j + 1];
+			}
+			if (bSort) {
+				break;
+		}
+		}
+	}
+	cout << m << endl;
+	cout << endl;
 }

@@ -61,7 +61,7 @@ int main() {
 	binaryTreeTest();
 	test278();
 
-	vector<int>vec = { 6,7,8,5,4,3,1,0,11,12 };
-	shell_sort(vec);
+	vector<int>vec = {12,5, 6,7,8,5,4,3,1,0,11,12,17,16 };
+	bubble_sort(vec);
 	return 0;
 }
