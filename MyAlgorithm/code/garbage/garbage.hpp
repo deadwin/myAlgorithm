@@ -163,6 +163,7 @@ void shell_sort(vector<int>&vec) {
 			}
 		}
 	}
+
 }
 
 //******************************
@@ -175,35 +176,19 @@ void shell_sort(vector<int>&vec) {
 //    By£º Ran Jin  
 //******************************
 void bubble_sort(vector<int>&vec) {
-	int n = 0;
-	vector<int>aaa = vec;
-	for (int i = 0; i < vec.size() - 2; ++i) {
-		for (int j = i + 1; j < vec.size() - 1; ++j) {
-			n = n++;
-			if (vec[i] > vec[j]) {
-				vec[i] = vec[i] ^ vec[j];
-				vec[j] = vec[i] ^ vec[j];
-				vec[i] = vec[i] ^ vec[j];
+	for (int i = 0; i < vec.size() - 1; ++i) {
+		int bChange = false;
+		for (int j = 0; j < vec.size() - 1 - i; ++j) {
+			if (vec[j] > vec[j + 1]) {
+				int temp = vec[j];
+				vec[j] = vec[j + 1];
+				vec[j + 1] = temp;
+				bChange = true;
 			}
 		}
-	}
-	cout << n << endl;
-	int m = 0;
-	for (int i = 0; i < aaa.size() - 1; ++i) {
-		bool bSort = true;
-		for (int j = 0; j < aaa.size() - 1-i; ++j) {
-			m += 1;
-			if (aaa[j] < aaa[j+1]) {
-				bSort = false;
-				aaa[j] = aaa[j] ^ aaa[j + 1];
-				aaa[j + 1] = aaa[j] ^ aaa[j + 1];
-				aaa[j] = aaa[j] ^ aaa[j + 1];
-			}
-			if (bSort) {
-				break;
-		}
+		if (bChange == false) {
+			break;
 		}
 	}
-	cout << m << endl;
-	cout << endl;
+	return;
 }
