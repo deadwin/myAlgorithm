@@ -234,22 +234,25 @@ void qsort_test(vector<int>&vec,int low,int high) {
 }
 
 //******************************
-//  描述： 
+//  描述： 选择排序
 //  详细： 
-//方法名： 
+//方法名： select_sort
 //  参数： 
 //返回值： void
 //  时间： 2018/07/09
 //    By： Ran Jin  
 //******************************
 void select_sort(vector<int>&vec) {
-	for (int i = 0; i != vec.size()-2; ++i) {
-		int num = vec[i];
-		for (int j = i + 1; j != vec.size() - 1; ++j) {
-			if (num > vec[j]) {
-				num = vec[j];
+	for (int i = 0; i != vec.size()-1; ++i) {
+		int num = i;
+		for (int j = i + 1; j != vec.size(); ++j) {
+			if (vec[i]> vec[j]) {
+				num = j;
 			}
 		}
+		int temp = vec[i];
+		vec[i] = vec[num];
+		vec[num] = temp;
 	}
 
 }

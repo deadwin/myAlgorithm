@@ -60,6 +60,6 @@ int main() {
 
 	vector<int>vec = {6,4,3,8,2,9,7};
 	//bubble_sort(vec);
-	qsort_test(vec,0,vec.size()-1);
+	select_sort(vec);
 	return 0;
 }
