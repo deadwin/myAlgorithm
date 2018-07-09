@@ -246,13 +246,15 @@ void select_sort(vector<int>&vec) {
 	for (int i = 0; i != vec.size()-1; ++i) {
 		int num = i;
 		for (int j = i + 1; j != vec.size(); ++j) {
-			if (vec[i]> vec[j]) {
+			if (vec[num]> vec[j]) {
 				num = j;
 			}
 		}
-		int temp = vec[i];
-		vec[i] = vec[num];
-		vec[num] = temp;
+		if (num != i){
+			int temp = vec[i];
+			vec[i] = vec[num];
+			vec[num] = temp;
+		}
 	}
 
 }
