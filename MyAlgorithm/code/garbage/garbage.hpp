@@ -27,8 +27,6 @@ enum {
 	CARD_BIG_JOKER = 0x0f,
 };
 
-
-
 map<int, map<int, map<int, int>>> ttt(const vector<int>&vecCardValue) {
 	map<int, vector<int>>mCard;
 	for (auto card : vecCardValue) {
@@ -146,23 +144,34 @@ void sort_test(vector<int>&vec) {
 //  作者： Ran Jin  
 //******************************
 void shell_sort(vector<int>&vec) {
+	//for (int div = vec.size() / 2; div >= 1; div /= 2) {
+	//	cout << endl;
+	//	for (int i = 0; i <= div; ++i) {
+	//		for (int j = i; j < vec.size() - div; j += div) {
+	//			for (int k = j+div; k < vec.size(); k += div) {
+	//				if (vec[k] < vec[j]) {
+	//					vec[j] = vec[k] ^ vec[j];
+	//					vec[k] = vec[j] ^ vec[k];
+	//					vec[j] = vec[j] ^ vec[k];
+	//				}
+	//				else if (vec[k] == vec[j]) {
+	//					cout << "相同" << k <<","<< j << endl;
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
+
 	for (int div = vec.size() / 2; div >= 1; div /= 2) {
-		cout << endl;
 		for (int i = 0; i <= div; ++i) {
 			for (int j = i; j < vec.size() - div; j += div) {
-				for (int k = j+div; k < vec.size(); k += div) {
-					if (vec[k] < vec[j]) {
-						vec[j] = vec[k] ^ vec[j];
-						vec[k] = vec[j] ^ vec[k];
-						vec[j] = vec[j] ^ vec[k];
-					}
-					else if (vec[k] == vec[j]) {
-						cout << "相同" << k <<","<< j << endl;
-					}
+				for (int k = j + div; k < vec.size(); k += div) {
+
 				}
 			}
 		}
 	}
+
 
 }
 
@@ -191,4 +200,56 @@ void bubble_sort(vector<int>&vec) {
 		}
 	}
 	return;
+}
+
+//******************************
+//  描述： 快速排序
+//  详细： 
+//方法名： qsort_test
+//  参数： vector<int>
+//返回值： void
+//  时间： 2018/06/23
+//    By： Ran Jin  
+//******************************
+void qsort_test(vector<int>&vec,int low,int high) {
+	if (low >= high)return;
+	int first = low;
+	int last = high;
+	int key = vec[first];
+	while (first < last) {
+		while (first < last && vec[last] >= key)
+		{
+			--last;
+		}
+		vec[first] = vec[last];
+		while (first < last && vec[first] <= key)
+		{
+			++first;
+		}
+		vec[last] = vec[first];
+	}
+	vec[first] = key;
+	qsort_test(vec, low, first - 1);
+	qsort_test(vec, first + 1, high);
+}
+
+//******************************
+//  描述： 
+//  详细： 
+//方法名： 
+//  参数： 
+//返回值： void
+//  时间： 2018/07/09
+//    By： Ran Jin  
+//******************************
+void select_sort(vector<int>&vec) {
+	for (int i = 0; i != vec.size()-2; ++i) {
+		int num = vec[i];
+		for (int j = i + 1; j != vec.size() - 1; ++j) {
+			if (num > vec[j]) {
+				num = vec[j];
+			}
+		}
+	}
+
 }

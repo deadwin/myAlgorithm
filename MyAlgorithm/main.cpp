@@ -53,15 +53,13 @@ void test278() {
 }
 
 
-
-
-
 int main() {
 	cout << "hello algorithm" << endl;
 	binaryTreeTest();
 	test278();
 
-	vector<int>vec = {12,5, 6,7,8,5,4,3,1,0,11,12,17,16 };
-	bubble_sort(vec);
+	vector<int>vec = {6,4,3,8,2,9,7};
+	//bubble_sort(vec);
+	qsort_test(vec,0,vec.size()-1);
 	return 0;
 }
