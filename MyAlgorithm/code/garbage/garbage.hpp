@@ -120,18 +120,13 @@ void g_ths() {
 //  ×÷Õß£º Ran Jin  
 //******************************
 void sort_test(vector<int>&vec) {
-	for (int i = 0; i != vec.size() - 1; ++i) {
-		int temp = i;
-		for (int j = i + 1; j != vec.size(); ++j) {
-			if (vec[j] < vec[temp]) {
-				temp = j;
-			}
+	for (int i = 1; i != vec.size(); ++i) {
+		int temp = vec[i];
+		int j = i - 1;
+		for (; j >= 0 && vec[j] > temp; j--) {
+			vec[j + 1] = vec[j];
 		}
-		if (temp != i) {
-			int tp = vec[temp];
-			vec[temp] = vec[i];
-			vec[i] = tp;
-		}
+		vec[j+1] = temp;
 	}
 }
 //******************************
