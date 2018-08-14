@@ -24,6 +24,9 @@
     <Filter Include="code\garbage">
       <UniqueIdentifier>{8be2d865-c630-493b-b02f-dcc058123610}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\709">
+      <UniqueIdentifier>{7e8d2144-0003-46ab-bb41-63aa467c0ecb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +54,9 @@
     </ClInclude>
     <ClInclude Include="code\garbage\garbage.hpp">
       <Filter>code\garbage</Filter>
+    </ClInclude>
+    <ClInclude Include="code\709\toLowerCase.h">
+      <Filter>code\709</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

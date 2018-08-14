@@ -5,6 +5,7 @@
 #include <functional>
 #include<algorithm>
 #include <map>
+#include <string>
 using std::stack;
 using std::vector;
 using std::cout;
@@ -14,6 +15,7 @@ using std::max;
 using std::min;
 using std::map;
 using std::vector;
+using std::string;
 #ifndef NULL
 #define NULL 0
 #endif
