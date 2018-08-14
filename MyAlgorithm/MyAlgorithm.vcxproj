@@ -27,6 +27,7 @@
     <ClInclude Include="code\278\firstBadVersion.h" />
     <ClInclude Include="code\709\toLowerCase.h" />
     <ClInclude Include="code\836\RectangleOverlap.hpp" />
+    <ClInclude Include="code\array\array_primary.h" />
     <ClInclude Include="code\binaryTree\BinaryTree.h" />
     <ClInclude Include="code\garbage\garbage.hpp" />
     <ClInclude Include="code\globalData\globalData.h" />

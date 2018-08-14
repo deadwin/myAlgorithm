@@ -2,7 +2,7 @@
 #include "278/firstBadVersion.h"
 #include "836/RectangleOverlap.hpp"
 #include "garbage/garbage.hpp"
-#include "709/toLowerCase.h"
+#include "array/array_primary.h"
 void binaryTreeTest() {
 	BinaryTree*bin = new BinaryTree;
 	TreeNode*tree = BinaryTree::getTree();
@@ -57,11 +57,10 @@ void test278() {
 int main() {
 	cout << "hello algorithm" << endl;
 
-	vector<int>vec = {6,4,3,8,2,9,7};
+	vector<int>vec = { 6,4,3,8,2,9,7 };
 
 	Solution s;
-	string str = "azAZ";
-	str =  s.toLowerCase(str);
-	cout << str;
+	vec = { 0,0,0,1,1,3,3,3,4,4,5 };
+	s.removeDuplicates(vec);
 	return 0;
 }

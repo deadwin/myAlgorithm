@@ -27,6 +27,9 @@
     <Filter Include="code\709">
       <UniqueIdentifier>{7e8d2144-0003-46ab-bb41-63aa467c0ecb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\array">
+      <UniqueIdentifier>{e4d80cad-ea46-4f36-8433-e74846eb288f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,6 +60,9 @@
     </ClInclude>
     <ClInclude Include="code\709\toLowerCase.h">
       <Filter>code\709</Filter>
+    </ClInclude>
+    <ClInclude Include="code\array\array_primary.h">
+      <Filter>code\array</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
