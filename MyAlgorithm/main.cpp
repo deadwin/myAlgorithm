@@ -60,51 +60,40 @@ void card_test() {
 
 
 
-typedef struct NodeElem
-{
-	int data;
-	NodeElem * Next = NULL;
-}NodeElem;
-
-typedef NodeElem* ElemList;
-
+struct Node {
+	int val;
+	Node *left;
+	Node *right;
+	Node *next;
+};
 
 
-void insert(int data, ElemList list) {
-	ElemList p = list;
-	while (p->Next != NULL) {
-		if (p->Next->data > data) {
-			ElemList node = new NodeElem();
-			node->data = data;
-			node->Next = p->Next;
-			p->Next = node;
-			return;
-		}
-		else {
-			p = p->Next;
-		}
-	}
-	ElemList node = new NodeElem();
-	node->data = data;
-	node->Next = NULL;
-	p->Next = node;
-}
-void deleteNode(int data, ElemList list) {
-	ElemList p = list;
-	while (p->Next != NULL) {
-		if (p->Next->data == data) {
-			auto node = p->Next;
-			p->Next = p->Next->Next;
-			free(node);
-			return;
-		}
-		else {
-			p = p->Next;
+Node* connect(Node* root) {
+	vector<Node*> nodeStack = {};
+	nodeStack.push_back(root);
+	Node* point, * head;
+
+	while (nodeStack.size() != 0) {
+		int size = nodeStack.size();
+		point = nodeStack.front();
+		head = point;
+		nodeStack.erase(nodeStack.begin());
+		size--;
+		while (size != 0) {
+			point->next = nodeStack.front();
+
+			if (point->right) {
+				nodeStack.push_back(point->right);
+			}
+			if (point->left) {
+				nodeStack.push_back(point->left);
+			}
+			point = point->next;
+			size--;
 		}
 	}
-	cout << "can't find the data" << data << endl;
+	return root;
 }
-
 
 int main() {
 	cout << "hello algorithm" << endl;
@@ -115,48 +104,13 @@ int main() {
 	vec = { 0,0,0,1,1,3,3,3,4,4,5 };
 	s.removeDuplicates(vec);
 
+	auto n = new Node();
+	n->next = NULL;
+	n->left = NULL;
+	n->right = NULL;
+	n->val = 1;
+	connect(n);
 
-	ElemList e = new NodeElem();
 	
-	ElemList point =  e;
-	for (auto i = 0; i < 10; i++) {
-		ElemList n = new NodeElem();
-		n->data = i;
-		point->Next = n;
-		point = n;
-	}
-
-	point = e;
-	do {
-		point = point->Next;
-		cout << point->data << endl;
-	} while (point->Next != NULL);
-
-	insert(-2, e);
-
-	deleteNode(4, e);
-	point = e;
-	do {
-		point = point->Next;
-		cout << point->data << endl;
-	} while (point->Next != NULL);
-
-
-	ElemList p = (ElemList)malloc(sizeof(NodeElem));
-	ElemList k = (ElemList)malloc(sizeof(NodeElem));
-
-
-	for (auto i = 10; i < 15; i++) {
-		ElemList node = new NodeElem();
-		node->data = i;
-		node->Next = point->Next;
-		point->Next = node;
-	}
-	cout << endl;
-	point = e;
-	do {
-		point = point->Next;
-		cout << point->data << endl;
-	} while (point->Next != NULL);
 	return 0;
 }
