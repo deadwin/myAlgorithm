@@ -30,6 +30,9 @@
     <Filter Include="code\array">
       <UniqueIdentifier>{e4d80cad-ea46-4f36-8433-e74846eb288f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\116">
+      <UniqueIdentifier>{d1324afb-d13b-4c32-84fd-2c3e4f9028e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +66,9 @@
     </ClInclude>
     <ClInclude Include="code\array\array_primary.h">
       <Filter>code\array</Filter>
+    </ClInclude>
+    <ClInclude Include="code\116\NodeConnect.hpp">
+      <Filter>code\116</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

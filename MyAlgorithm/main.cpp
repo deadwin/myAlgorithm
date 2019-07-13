@@ -60,40 +60,9 @@ void card_test() {
 
 
 
-struct Node {
-	int val;
-	Node *left;
-	Node *right;
-	Node *next;
-};
 
 
-Node* connect(Node* root) {
-	vector<Node*> nodeStack = {};
-	nodeStack.push_back(root);
-	Node* point, * head;
 
-	while (nodeStack.size() != 0) {
-		int size = nodeStack.size();
-		point = nodeStack.front();
-		head = point;
-		nodeStack.erase(nodeStack.begin());
-		size--;
-		while (size != 0) {
-			point->next = nodeStack.front();
-
-			if (point->right) {
-				nodeStack.push_back(point->right);
-			}
-			if (point->left) {
-				nodeStack.push_back(point->left);
-			}
-			point = point->next;
-			size--;
-		}
-	}
-	return root;
-}
 
 int main() {
 	cout << "hello algorithm" << endl;
@@ -104,13 +73,9 @@ int main() {
 	vec = { 0,0,0,1,1,3,3,3,4,4,5 };
 	s.removeDuplicates(vec);
 
-	auto n = new Node();
-	n->next = NULL;
-	n->left = NULL;
-	n->right = NULL;
-	n->val = 1;
-	connect(n);
 
-	
+
+
 	return 0;
 }
+
